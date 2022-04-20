@@ -56,6 +56,13 @@ nav {
     align-items: center;
 }
 
+.nav__back a {
+    border: 1px solid var(--Black);
+    border-radius: 6px;
+    padding: .6em 1.2em;
+    margin-left: .2em;
+}
+
 h1, h2 {
     font-family: var(--Headerfonts);
     color:#EA5F2D;
