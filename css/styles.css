@@ -1,0 +1,20 @@
+:root {
+    --Green: #1A5E37;
+    --Blue: #9DD5E6;
+    --Pink: #EF9EB4;
+    --Orange: #EA5F2D;
+    --Black: #0B2020;
+    --Beige: #E8D3B5;
+}
+
+@font-face {
+    font-family: Bauhaus;
+    src: url(../assets/fonts/Bauhaus\ 93\ Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf),
+    url(../assets/fonts/Poppins/Poppins-Thin.ttf),
+    url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+}
