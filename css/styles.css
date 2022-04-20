@@ -4,7 +4,7 @@
     --Pink: #EF9EB4;
     --Orange: #EA5F2D;
     --Black: #0B2020;
-    --Beige: #E8D3B5;
+    --Beige: #EADCC3;
 
     --Headerfonts: "Bauhaus", sans-serif;
     --Bodyfont: "Poppins", sans-serif; 
@@ -22,7 +22,53 @@
     url(../assets/fonts/Poppins/Poppins-Bold.ttf);
 }
 
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Bodyfont);
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    background-color: var(--Beige);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav {
+    border-bottom: solid 1px #0B2020;
+    padding: .6em 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__front {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 h1, h2 {
     font-family: var(--Headerfonts);
     color:#EA5F2D;
+}
+
+.landing {
+    display: flex;
+    width: 100%;
+    padding-top: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing img {
+    width: 40%;
 }

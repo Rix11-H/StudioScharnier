@@ -1,5 +1,6 @@
 <?php
 
+include_once("bootstrap.php");
 
 
 ?><!DOCTYPE html>
@@ -12,10 +13,14 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+
     <?php include_once("nav.inc.php"); ?>
 
-    <main>
+    <main class="landing">
+        <img src="./assets/imgs/istockphoto-659020452-170667a.png" alt="paal">
     </main>
+
     <?php include_once("footer.inc.php"); ?>
+
 </body>
 </html>
