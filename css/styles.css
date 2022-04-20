@@ -5,16 +5,24 @@
     --Orange: #EA5F2D;
     --Black: #0B2020;
     --Beige: #E8D3B5;
+
+    --Headerfonts: "Bauhaus", sans-serif;
+    --Bodyfont: "Poppins", sans-serif; 
 }
 
 @font-face {
-    font-family: Bauhaus;
+    font-family: "Bauhaus";
     src: url(../assets/fonts/Bauhaus\ 93\ Regular.ttf);
 }
 
 @font-face {
-    font-family: Poppins;
+    font-family: "Poppins";
     src: url(../assets/fonts/Poppins/Poppins-Regular.ttf),
     url(../assets/fonts/Poppins/Poppins-Thin.ttf),
     url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+h1, h2 {
+    font-family: var(--Headerfonts);
+    color:#EA5F2D;
 }
