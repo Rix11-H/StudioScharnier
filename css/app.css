@@ -59,6 +59,10 @@ h1, h2 {
   margin: 2em;
 }
 
+a {
+  text-decoration: none;
+}
+
 nav {
   border-bottom: solid 1px #0B2020;
   padding: .6em 1.2em;
@@ -73,8 +77,11 @@ nav {
           align-items: center;
 }
 
+.hideDesktop {
+  display: none;
+}
+
 .nav__front {
-  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,18 +93,55 @@ nav {
           align-items: center;
 }
 
+.nav__link {
+  margin: 0 1em;
+}
+
 .nav__logo {
   font-family: "Bauhaus";
 }
 
-.nav__back a {
-  border: 1px solid #0B2020;
+@media (max-width: 576px) {
+  .hideDesktop {
+    display: block;
+  }
+  .hideMobile {
+    display: none;
+  }
+}
+
+@use "./styles/colors";
+.button {
   border-radius: 6px;
   padding: .6em 1.2em;
   margin-left: .2em;
 }
 
-@use "./styles/colors";
+.button__text {
+  color: #0B2020;
+}
+
+.button--primary {
+  background-color: #EF773F;
+  border: none;
+}
+
+.button--danger {
+  background-color: #aa0000;
+}
+
+.button--success {
+  background-color: #1A5E37;
+}
+
+.button--danger .button__text, .button--success .button__text {
+  color: #EADCC3;
+}
+
+.button--ghost {
+  border: 1px solid #0B2020;
+}
+
 @use "./styles/colors";
 @use "../styles/colors";
 .card {

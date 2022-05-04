@@ -1,5 +1,9 @@
 @import "../styles/_colors.scss";
 
+a {
+    text-decoration: none;
+}
+
 nav {
     border-bottom: solid 1px $dark;
     padding: .6em 1.2em;
@@ -8,20 +12,32 @@ nav {
     align-items: center;
 }
 
+.hideDesktop {
+    display: none;
+}
+
 .nav__front {
-    width: 40%;
+    // width: 40%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.nav__link {
+    margin: 0 1em;
+}
+
+
 .nav__logo {
     font-family: "Bauhaus";
 }
 
-.nav__back a {
-    border: 1px solid $dark;
-    border-radius: 6px;
-    padding: .6em 1.2em;
-    margin-left: .2em;
+@media (max-width: 576px) {
+    .hideDesktop {
+        display: block;
+    }
+    .hideMobile {
+        display: none;
+    }
 }
+

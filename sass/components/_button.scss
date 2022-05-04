@@ -1,2 +1,32 @@
 @use "./styles/colors";
 
+.button {
+    border-radius: 6px;
+    padding: .6em 1.2em;
+    margin-left: .2em;
+}
+
+.button__text {
+    color: $dark;
+}
+
+.button--primary {
+    background-color: $primary;
+    border: none;
+}
+
+.button--danger {
+    background-color: $danger;
+}
+
+.button--success {
+    background-color: $success;
+}
+
+.button--danger .button__text, .button--success .button__text {
+    color: $neutral;
+}
+
+.button--ghost  {
+    border: 1px solid $dark;
+}
