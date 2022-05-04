@@ -1,0 +1,44 @@
+*,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: fonts.$header;
+    font-style: normal;
+}
+
+body {
+    width: 100%;
+    background-color: colors.$neutral;
+}
+
+@use "./styles/colors";
+@use "./styles/fonts";
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2 {
+    font-family: fonts.$header;
+    color: colors.$primary;
+}
+
+.landing {
+    display: flex;
+    width: 100%;
+    padding-top: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing img {
+    width: 40%;
+}
+
+.uploadedContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2em;
+}

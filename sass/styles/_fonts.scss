@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Bauhaus";
+    src: url(../assets/fonts/Bauhaus\ 93\ Regular.ttf);
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf),
+    url(../assets/fonts/Poppins/Poppins-Thin.ttf),
+    url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+$header: "Bauhaus";
+$body: "Poppins";
+
+

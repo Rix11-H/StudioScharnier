@@ -22,7 +22,7 @@
     url(../assets/fonts/Poppins/Poppins-Bold.ttf);
 }
 
-*,
+/* *,
 html {
     margin: 0;
     padding: 0;
@@ -39,9 +39,9 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-}
+} */
 
-nav {
+/* nav {
     border-bottom: solid 1px #0B2020;
     padding: .6em 1.2em;
     display: flex;
@@ -61,7 +61,7 @@ nav {
     border-radius: 6px;
     padding: .6em 1.2em;
     margin-left: .2em;
-}
+} */
 
 h1, h2 {
     font-family: var(--Headerfonts);
@@ -90,7 +90,7 @@ main {
     margin: 2em;
 }
 
-.card {
+/* .card {
     background-color: #0b20201e;
     margin: .6em;
 }
@@ -102,6 +102,6 @@ main {
 .card__text {
     padding: 0 .8em .4em .8em;
 
-}
+} */
 
 

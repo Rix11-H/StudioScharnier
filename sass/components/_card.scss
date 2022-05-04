@@ -1,0 +1,16 @@
+@use "./styles/colors";
+@use "./styles/fonts";
+
+.card {
+    background-color: colors.$dark;
+    margin: .6em;
+}
+
+.card__img, .card__video {
+    max-width: 100%;
+}
+
+.card__text {
+    padding: 0 .8em .4em .8em;
+
+}

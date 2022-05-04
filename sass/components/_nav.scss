@@ -1,0 +1,24 @@
+@use "./styles/colors";
+@use "./styles/fonts";
+
+nav {
+    border-bottom: solid 1px colors.$dark;
+    padding: .6em 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__front {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__back a {
+    border: 1px solid colors.$dark;
+    border-radius: 6px;
+    padding: .6em 1.2em;
+    margin-left: .2em;
+}
