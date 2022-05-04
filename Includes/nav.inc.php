@@ -1,6 +1,6 @@
 <nav>
     <div class="nav__front">
-        <a href="index.php"><h1 style="font-family: Bauhaus;" >Studio Scharnier</h1></a>
+        <a href="index.php"><h1 class="nav__logo">Studio Scharnier</h1></a>
         <a href="radio.php">Radio</a>
         <a href="video.php">Video</a>
         <a href="beeld.php">Beeld</a>

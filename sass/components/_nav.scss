@@ -1,8 +1,7 @@
-@use "./styles/colors";
-@use "./styles/fonts";
+@import "../styles/_colors.scss";
 
 nav {
-    border-bottom: solid 1px colors.$dark;
+    border-bottom: solid 1px $dark;
     padding: .6em 1.2em;
     display: flex;
     justify-content: space-between;
@@ -16,8 +15,12 @@ nav {
     align-items: center;
 }
 
+.nav__logo {
+    font-family: "Bauhaus";
+}
+
 .nav__back a {
-    border: 1px solid colors.$dark;
+    border: 1px solid $dark;
     border-radius: 6px;
     padding: .6em 1.2em;
     margin-left: .2em;

@@ -1,7 +1,21 @@
-@use "./global";
-@use "./styles/colors";
-@use "./styles/fonts";
-@use "./components/btn";
-@use "./components/alert";
-@use "./components/form";
-@use "./components/card";
+@font-face {
+    font-family: "Bauhaus";
+    src: url(../assets/fonts/Bauhaus93Regular.ttf);
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf),
+    url(../assets/fonts/Poppins/Poppins-Thin.ttf),
+    url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@import "./styles/_colors.scss";
+
+@import "./_global.scss";
+
+@import "./components/_nav.scss";
+@import "./components/_button.scss";
+@import "./components/_alert.scss";
+@import "./components/_form.scss";
+@import "./components/_card.scss";

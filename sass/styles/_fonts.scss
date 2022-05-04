@@ -1,16 +1,36 @@
+$header: "Bauhaus", serif;
+$body--regular: "Poppins", sans-serif;
+$body--bold: "Poppins Bold", sans-serif;
+$body--thin: "Poppins Thin", sans-serif;
+
+
 @font-face {
     font-family: "Bauhaus";
-    src: url(../assets/fonts/Bauhaus\ 93\ Regular.ttf);
+    src: url(./assets/fonts/Bauhaus93Regular.ttf) format("ttf");
+    font-weight: normal;
+    font-style:normal;
+}
+
+ 
+@font-face {
+    font-family: "Poppins Regular";
+    src: url(./assets/fonts/Poppins/Poppins-Regular.ttf) format("ttf");
+    font-weight: normal;
+    font-style:normal;
+}    
+
+@font-face {
+    font-family: "Poppins Thin";
+    src: url(./assets/fonts/Poppins/Poppins-Thin.ttf) format("ttf");
+    font-weight: light;
+    font-style:normal;
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf),
-    url(../assets/fonts/Poppins/Poppins-Thin.ttf),
-    url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+    font-family: "Poppins Bold";
+    src: url(./assets/fonts/Poppins/Poppins-Bold.ttf) format("ttf");
+    font-weight: bold;
+    font-style:normal;
 }
-
-$header: "Bauhaus";
-$body: "Poppins";
 
 

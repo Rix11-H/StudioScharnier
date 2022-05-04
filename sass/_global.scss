@@ -1,19 +1,19 @@
+@import "./styles/_colors";
+
+
 *,
 html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: fonts.$header;
+    font-family: "Poppins";
     font-style: normal;
 }
 
 body {
     width: 100%;
-    background-color: colors.$neutral;
+    background-color: $neutral;
 }
-
-@use "./styles/colors";
-@use "./styles/fonts";
 
 a {
     text-decoration: none;
@@ -21,8 +21,8 @@ a {
 }
 
 h1, h2 {
-    font-family: fonts.$header;
-    color: colors.$primary;
+    font-family: "Bauhaus";
+    color: $primary;
 }
 
 .landing {

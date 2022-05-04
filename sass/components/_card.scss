@@ -1,8 +1,7 @@
-@use "./styles/colors";
-@use "./styles/fonts";
+@import "../styles/_colors.scss";
 
 .card {
-    background-color: colors.$dark;
+    background-color: #0b20201e;
     margin: .6em;
 }
 

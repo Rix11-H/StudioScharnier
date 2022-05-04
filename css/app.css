@@ -1,7 +1,114 @@
-@use "./global";
+@font-face {
+  font-family: "Bauhaus";
+  src: url(../assets/fonts/Bauhaus93Regular.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/fonts/Poppins/Poppins-Regular.ttf), url(../assets/fonts/Poppins/Poppins-Thin.ttf), url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins";
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  background-color: #EADCC3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2 {
+  font-family: "Bauhaus";
+  color: #EF773F;
+}
+
+.landing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding-top: 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.landing img {
+  width: 40%;
+}
+
+.uploadedContent {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 2em;
+}
+
+nav {
+  border-bottom: solid 1px #0B2020;
+  padding: .6em 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__front {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__logo {
+  font-family: "Bauhaus";
+}
+
+.nav__back a {
+  border: 1px solid #0B2020;
+  border-radius: 6px;
+  padding: .6em 1.2em;
+  margin-left: .2em;
+}
+
 @use "./styles/colors";
-@use "./styles/fonts";
-@use "./components/btn";
-@use "./components/alert";
-@use "./components/form";
-@use "./components/card";
+@use "./styles/colors";
+@use "../styles/colors";
+.card {
+  background-color: #0b20201e;
+  margin: .6em;
+}
+
+.card__img, .card__video {
+  max-width: 100%;
+}
+
+.card__text {
+  padding: 0 .8em .4em .8em;
+}

@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --Green: #1A5E37;
     --Blue: #9DD5E6;
     --Pink: #EF9EB4;
@@ -20,7 +20,7 @@
     src: url(../assets/fonts/Poppins/Poppins-Regular.ttf),
     url(../assets/fonts/Poppins/Poppins-Thin.ttf),
     url(../assets/fonts/Poppins/Poppins-Bold.ttf);
-}
+} */
 
 /* *,
 html {
@@ -63,7 +63,7 @@ a {
     margin-left: .2em;
 } */
 
-h1, h2 {
+/* h1, h2 {
     font-family: var(--Headerfonts);
     color:#EA5F2D;
 }
@@ -80,15 +80,11 @@ h1, h2 {
     width: 40%;
 }
 
-main {
-
-}
-
 .uploadedContent {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 2em;
-}
+} */
 
 /* .card {
     background-color: #0b20201e;
