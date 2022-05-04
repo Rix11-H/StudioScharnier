@@ -10,7 +10,7 @@ include_once("bootstrap.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Scharnier</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <!-- <link rel="stylesheet" href="./css/styles.css"> -->
 </head>
 <body>
 
@@ -21,6 +21,6 @@ include_once("bootstrap.php");
     </main>
 
     <?php include_once("footer.inc.php"); ?>
-
+    <script type="module" src="/src/sass/app.scss"></script>
 </body>
 </html>

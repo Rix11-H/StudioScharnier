@@ -79,3 +79,29 @@ h1, h2 {
 .landing img {
     width: 40%;
 }
+
+main {
+
+}
+
+.uploadedContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 2em;
+}
+
+.card {
+    background-color: #0b20201e;
+    margin: .6em;
+}
+
+.card__img, .card__video {
+    max-width: 100%;
+}
+
+.card__text {
+    padding: 0 .8em .4em .8em;
+
+}
+
+

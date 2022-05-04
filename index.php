@@ -1,6 +1,6 @@
 <?php
 
-include_once("bootstrap.php");
+include_once("bootstrap.inc.php");
 
 
 ?><!DOCTYPE html>
@@ -14,13 +14,13 @@ include_once("bootstrap.php");
 </head>
 <body>
 
-    <?php include_once("nav.inc.php"); ?>
+    <?php include_once("Includes/nav.inc.php"); ?>
 
     <main class="landing">
         <img src="./assets/imgs/istockphoto-659020452-170667a.png" alt="paal">
     </main>
 
-    <?php include_once("footer.inc.php"); ?>
+    <?php include_once("Includes/footer.inc.php"); ?>
 
 </body>
 </html>
