@@ -1,103 +1,51 @@
-/* :root {
-    --Green: #1A5E37;
-    --Blue: #9DD5E6;
-    --Pink: #EF9EB4;
-    --Orange: #EA5F2D;
-    --Black: #0B2020;
-    --Beige: #EADCC3;
-
-    --Headerfonts: "Bauhaus", sans-serif;
-    --Bodyfont: "Poppins", sans-serif; 
-}
-
-@font-face {
-    font-family: "Bauhaus";
-    src: url(../assets/fonts/Bauhaus\ 93\ Regular.ttf);
-}
-
 @font-face {
     font-family: "Poppins";
-    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf),
-    url(../assets/fonts/Poppins/Poppins-Thin.ttf),
-    url(../assets/fonts/Poppins/Poppins-Bold.ttf);
-} */
+    src: 
+    url(../assets/fonts/Poppins/Poppins-Thin.ttf);
+}
 
-/* *,
-html {
-    margin: 0;
-    padding: 0;
+*, html {
     box-sizing: border-box;
-    font-family: var(--Bodyfont);
-    font-style: normal;
 }
 
 body {
-    width: 100%;
-    background-color: var(--Beige);
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    font-family: "Poppins";
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-} */
-
-/* nav {
-    border-bottom: solid 1px #0B2020;
-    padding: .6em 1.2em;
+.background {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav__front {
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav__back a {
-    border: 1px solid var(--Black);
-    border-radius: 6px;
-    padding: .6em 1.2em;
-    margin-left: .2em;
-} */
-
-/* h1, h2 {
-    font-family: var(--Headerfonts);
-    color:#EA5F2D;
-}
-
-.landing {
-    display: flex;
-    width: 100%;
-    padding-top: 2em;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:100vh;
+    background-image: url(../assets/imgs/coming-soon.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.landing img {
-    width: 40%;
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 300px 100%;
+    background-color: rgba(159, 159, 159, 0.4);
 }
 
-.uploadedContent {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 2em;
-} */
-
-/* .card {
-    background-color: #0b20201e;
-    margin: .6em;
+.logo {
+    text-align: center;
+    width: 400px;
+    height: auto;
 }
 
-.card__img, .card__video {
-    max-width: 100%;
+h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0px 0px  8px black;
 }
-
-.card__text {
-    padding: 0 .8em .4em .8em;
-
-} */
-
-

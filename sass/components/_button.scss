@@ -1,32 +1,42 @@
 @use "./styles/colors";
 
-.button {
-    border-radius: 6px;
-    padding: .6em 1.2em;
+.btn {
+    border-radius: 5px;
+    padding: .6em 1.6em;
     margin-left: .2em;
+    color: $neutral;
+}
+
+.btn:hover {
+    cursor: pointer;
 }
 
 .button__text {
-    color: $dark;
+    color: $neutral;
 }
 
-.button--primary {
+.btn--primary {
     background-color: $primary;
     border: none;
 }
 
-.button--danger {
+.btn--primary:hover {
+    background-color: $primary--dark;
+}
+
+
+.btn--danger {
     background-color: $danger;
 }
 
-.button--success {
+.btn--success {
     background-color: $success;
 }
 
-.button--danger .button__text, .button--success .button__text {
+.btn--danger .button__text, .button--success .button__text {
     color: $neutral;
 }
 
-.button--ghost  {
+.btn--ghost  {
     border: 1px solid $dark;
 }

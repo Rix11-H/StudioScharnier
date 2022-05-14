@@ -1,8 +1,38 @@
 @import "../styles/_colors.scss";
 
 .card {
-    background-color: #0b20201e;
-    margin: .6em;
+    background-color: $neutral;
+    margin: 1em;
+    max-width: 320px;
+    height: 380px;
+}
+
+.card--header {
+    border: none;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 20% auto 10%;
+    column-gap: 1em;
+}
+
+.header__top {
+    font-size: 1.6em;
+    margin-bottom: .4em;
+}
+
+.header__title {
+    font-size: 2.4em;
+}
+
+.header__text {
+    height: 100%;
+    background-color: red;
+}
+
+.header__img {
+    max-width: 100%;
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 4;
 }
 
 .card__img, .card__video {
@@ -10,6 +40,26 @@
 }
 
 .card__text {
-    padding: 0 .8em .4em .8em;
+    padding: .4em .8em .4em .8em;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: space-between;
+    justify-content: space-between;
+}
 
+.card__description {
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+
+.card__link {
+    color: $primary;
+}
+
+.card__link:hover {
+    cursor: pointer;
+    color: #c9602f;
 }

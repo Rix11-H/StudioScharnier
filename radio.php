@@ -17,13 +17,13 @@ include_once("bootstrap.php");
 </head>
 <body>
 
-    <?php include_once("nav.inc.php"); ?>
+    <?php include_once("./Includes/nav.inc.php"); ?>
 
     <main class="landing">
         <h1>Radio</h1>
     </main>
 
-    <?php include_once("footer.inc.php"); ?>
+    <?php include_once("./Includes/footer.inc.php"); ?>
     <script type="module" src="/src/sass/app.scss"></script>
 </body>
 </html>
