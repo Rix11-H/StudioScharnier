@@ -49,7 +49,6 @@ if (!empty($_POST)) {
 </head>
 
 <body>
-    <?php include_once("Includes/nav.inc.php"); ?>
     <main class="login">
         <div class="background">
             <div class="content">

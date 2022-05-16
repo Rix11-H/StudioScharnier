@@ -1,6 +1,7 @@
 @use "./styles/colors";
 
 .btn {
+    text-decoration: none;
     border-radius: 5px;
     padding: .6em 1.6em;
     margin-left: .2em;
@@ -8,6 +9,7 @@
 }
 
 .btn:hover {
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -17,14 +19,17 @@
 
 .btn--primary {
     background-color: $primary;
+    color: $neutral;
     border: none;
 }
 
 .btn--primary:hover {
+    color: $neutral;
     background-color: $primary--dark;
 }
 
 .btn--primary--outline {
+    padding: .4em 1.6em;
     background-color: $neutral;
     color: $primary;
     border: 2px solid $primary;
@@ -34,7 +39,6 @@
     background-color: $primary;
     color: $neutral;
 }
-
 
 .btn--danger {
     background-color: $danger;
@@ -51,3 +55,4 @@
 .btn--ghost  {
     border: 1px solid $dark;
 }
+

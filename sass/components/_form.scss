@@ -18,3 +18,9 @@
 //     align-items: center;
 //     flex-wrap: nowrap;
 // }
+
+@media (max-width: 800px) {
+    .form--account {
+        max-width: 100%;
+    }
+}

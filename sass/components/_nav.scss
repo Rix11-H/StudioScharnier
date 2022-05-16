@@ -4,7 +4,7 @@ a {
     text-decoration: none;
 }
 
-nav {
+.nav {
     border-bottom: solid 1px $dark;
     padding: .6em 1.2em;
     display: flex;
@@ -12,6 +12,7 @@ nav {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
 }
 
 .nav__front {
@@ -29,6 +30,15 @@ nav {
     margin: 0 1em;
 }
 
+.nav__link:hover {
+    color: $primary;
+}
+
+.nav__link--primary {
+    color: $primary;
+}
+
+
 .nav__logo {
     display: inline-block;
 }
@@ -38,5 +48,20 @@ nav {
     width: auto;
     display: inline-block;
 }
+
+.nav--mobile {
+    display: none;
+}
+
+@media (max-width: 860px) {
+    .nav--desktop {
+        display: none;
+    }
+
+    .nav--mobile {
+        display: flex;
+    }
+}
+
 
 

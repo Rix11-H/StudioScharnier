@@ -2,17 +2,7 @@
 
 include_once("bootstrap.php");
 
-session_start();
-
-// variable loggedin is used to see if user is logged in or not
-if (isset($_SESSION["user"])) {
-    $loggedin = true;
-} else {
-    $loggedin = false;
-}
-
-
-if (!empty($_POST)) {
+if (!empty($_POST["submit"])) {
     try {
         $user = new User();
 
@@ -24,6 +14,7 @@ if (!empty($_POST)) {
 
         if ($user->canLogin($email, $password)) {
             session_start();
+            $_SESSION['user'] = $user->findByEmail($email);
             header("Location: index.php");
         }
     } catch (Throwable $e) {
@@ -48,7 +39,6 @@ if (!empty($_POST)) {
 </head>
 
 <body>
-<?php include_once("Includes/nav.inc.php"); ?>
     <main class="login">
         <div class="background">
             <div class="content">
@@ -67,7 +57,7 @@ if (!empty($_POST)) {
                         <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
                         <small id="passwordforget" class="form-text text-muted"><a href="#">Forgot password</a></small>
                     </div>
-                    <input type="submit" class="btn btn--primary" value="Login"></input>
+                    <input type="submit" name="submit" class="btn btn--primary" value="Login"></input>
                     <hr class="mt-4">
                     <small id="noAccountYet" class="form-text text-muted">No account yet? | <a href="register.php" class="card__link">Register</a></small>
                 </form>
