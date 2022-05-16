@@ -191,6 +191,17 @@ nav {
   background-color: #dc4600;
 }
 
+.btn--primary--outline {
+  background-color: #f6f6f6;
+  color: #EF773F;
+  border: 2px solid #EF773F;
+}
+
+.btn--primary--outline:hover {
+  background-color: #EF773F;
+  color: #f6f6f6;
+}
+
 .btn--danger {
   background-color: #aa0000;
 }

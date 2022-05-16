@@ -9,7 +9,11 @@
         <a href="video.php" class="nav__link">Video</a>
         <a href="beeld.php" class="nav__link">Beeld</a>
         <a href="texts.php" class="nav__link">Teksten</a>
-        <a href="login.php" class="btn btn--primary"><span class="button__text">Login</span></a>
+        <?php if (!$loggedin) { ?>
+            <a href="login.php" class="btn btn--primary"><span class="button__text">Login</span></a>
+        <?php } else { ?>
+            <a href="logout.php" class="btn btn--primary--outline"><span class="button__text">Logout</span></a>
+        <?php } ?>
     </div>
 
 </nav>

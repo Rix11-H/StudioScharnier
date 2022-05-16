@@ -24,6 +24,17 @@
     background-color: $primary--dark;
 }
 
+.btn--primary--outline {
+    background-color: $neutral;
+    color: $primary;
+    border: 2px solid $primary;
+}
+
+.btn--primary--outline:hover {
+    background-color: $primary;
+    color: $neutral;
+}
+
 
 .btn--danger {
     background-color: $danger;

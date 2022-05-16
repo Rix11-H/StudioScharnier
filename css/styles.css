@@ -11,8 +11,8 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-y: hidden;
-    font-family: "Poppins";
+    overflow-x: hidden;
+    font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .background {
@@ -21,7 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height:100vh;
+    height:110vh;
     background-image: url(../assets/imgs/coming-soon.jpeg);
     background-position: center;
     background-repeat: no-repeat;
@@ -48,4 +48,13 @@ h1 {
     margin: 0;
     padding: 0;
     text-shadow: 0px 0px  8px black;
+}
+
+h2 {
+    font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #EF773F;
+}
+
+main {
+    margin: 10%;
 }

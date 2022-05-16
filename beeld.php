@@ -2,6 +2,16 @@
 
     include_once("bootstrap.php");
 
+    session_start();
+
+// variable loggedin is used to see if user is logged in or not
+if (isset($_SESSION["user"])) {
+    $loggedin = true;
+} else {
+    $loggedin = false;
+}
+
+
     $studioView = false;
 
     $conn = DB::getConnection();

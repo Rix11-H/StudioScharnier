@@ -2,6 +2,16 @@
 
     include_once("bootstrap.php");
 
+    session_start();
+
+    // variable loggedin is used to see if user is logged in or not
+    if (isset($_SESSION["user"])) {
+        $loggedin = true;
+    } else {
+        $loggedin = false;
+    }
+
+
     $studioView = false;
 
     $conn = DB::getConnection();
@@ -111,6 +121,9 @@
             <p><?php echo $uploadStatusMsg ?></p>
         </div>
     <?php endif; ?>
+    <?php if($loggedin === false): ?>
+        <p>You're not authorized to view this content.</p>
+    <?php else: ?>
         <div class="uploadedContent m-2">
             <?php foreach($videos as $video): ?>
                 <div class="card card--video">
@@ -125,6 +138,7 @@
                 </div>
             <?php endforeach; ?>
         </div>
+    <?php endif; ?>
     </main>
 
     <?php include_once("Includes/footer.inc.php"); ?>

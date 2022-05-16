@@ -2,6 +2,35 @@
 
 include_once("bootstrap.php");
 
+session_start();
+
+// variable loggedin is used to see if user is logged in or not
+if (isset($_SESSION["user"])) {
+    $loggedin = true;
+} else {
+    $loggedin = false;
+}
+
+
+if (!empty($_POST)) {
+    try {
+        $user = new User();
+
+        $user->setEmail($_POST['email']);
+        $user->setPassword($_POST['password']);
+
+        $email = $user->getEmail();
+        $password = $user->getPassword();
+
+        if ($user->canLogin($email, $password)) {
+            session_start();
+            header("Location: index.php");
+        }
+    } catch (Throwable $e) {
+        $error = $e->getMessage();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,19 +48,23 @@ include_once("bootstrap.php");
 </head>
 
 <body>
-    <?php include_once("Includes/nav.inc.php"); ?>
+<?php include_once("Includes/nav.inc.php"); ?>
     <main class="login">
         <div class="background">
             <div class="content">
-                <form class="form form--account">
+                <form action="" method="POST" class="form form--account">
                     <h1 class="pb-3">Login</h1>
+                    <?php if (isset($error)) : ?>
+                        <div class="alert alert-danger"><?php echo $error ?></div>
+                    <?php endif; ?>
+
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
                         <small id="passwordforget" class="form-text text-muted"><a href="#">Forgot password</a></small>
                     </div>
                     <input type="submit" class="btn btn--primary" value="Login"></input>

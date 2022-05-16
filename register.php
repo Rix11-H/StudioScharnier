@@ -2,6 +2,36 @@
 
 include_once("bootstrap.php");
 
+if (!empty($_POST)) {
+    try {
+        $user = new User();
+
+        $user->setFirstName($_POST['firstname']);
+        $user->setLastName($_POST['lastname']);
+        if($_POST["password"] != $_POST["password2"]) {
+            throw new Exception("Passwords do not match.");
+            echo "Passwords do not match.";
+        } else {
+            $user->setPassword($_POST['password']);
+        }
+        $user->setEmail($_POST['email']);
+
+        $email = $user->getEmail();
+        $firstname = $user->getFirstName();
+        $lastname = $user->getLastName();
+
+        $user->register();
+
+        session_start();
+        $_SESSION['user'] = $user->findByEmail($email);
+        header("Location: index.php");
+    } catch (Throwable $e) {
+        $error = $e->getMessage();
+        header("Location: register.php?error=$error");
+    }
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,29 +53,33 @@ include_once("bootstrap.php");
     <main class="login">
         <div class="background">
             <div class="content">
-                <form class="form form--account">
+                <form action="" method="post" class="form form--account">
                     <h1 class="pb-3">Register</h1>
                     <div class="form__flex d-flex justify-content-stretch">
                         <div class="form-group w-50 mr-2">
                             <label for="firstName">Voornaam</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="Jouw voornaam">
+                            <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Jouw voornaam">
                         </div>
                         <div class="form-group w-50 ml-2">
                             <label for="lastName">Familienaam</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Jouw familienaam">
+                            <input type="text" class="form-control" id="lastName" name="lastname" placeholder="Jouw familienaam">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Emailadres</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Wachtwoord</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Jouw wachtwoord">
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Jouw wachtwoord">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword2">Bevestig je wachtwoord</label>
-                        <input type="passwordConfirm" class="form-control" id="exampleInputPassword2" placeholder="Jouw wachtwoord">
+                        <input type="password" name="password2" class="form-control" id="exampleInputPassword2" placeholder="Jouw wachtwoord">
+                        <?php 
+                            if(!empty($_POST["password"]) && !empty($_POST["password2"])) {
+                                if($_POST["password"] != $_POST["password2"]){ echo "<small>Passwords does not match.</small>"; }
+                            } ?>
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
