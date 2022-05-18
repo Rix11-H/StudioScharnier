@@ -38,6 +38,7 @@ if (isset($_SESSION["user"])) {
             <h3 class="account__name"><?php echo $_SESSION["user"]["firstname"] . ' ' . $_SESSION["user"]["lastname"]; ?></h3>
             <p class="account__server"><?php if(!empty($_SESSION["user"]["server_name"])) { echo $_SESSION["user"]["server_name"]; } else { echo "unknown";}; ?></p>
             <div class="account__links">
+                <span class="account__link"><a href="#" style="color:#ef773f;text-decoration:underline" >Overview</a> ></span>
                 <span class="account__link"><a href="#" >Radio</a><?php if(!empty($radio)) { echo "(" . $radio . ")" ;} else { echo "" ;} ?> ></span>
                 <span class="account__link"><a href="#" >Beeld</a><?php if(!empty($beeld)) { echo "(" . $beeld . ")" ;} else { echo "" ;} ?> ></span>
                 <span class="account__link"><a href="#" >Video</a><?php if(!empty($video)) { echo "(" . $video . ")" ;} else { echo "" ;} ?> ></span>
