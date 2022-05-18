@@ -63,3 +63,70 @@ h1, h2 {
     padding: 5em 6em;
 }
 
+.accountRow {
+    max-width:100%;
+    margin:2em 1em;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.account {
+    background-color: white;
+    border-radius: 8px;
+    padding:1em;
+    margin: 1em;
+    width: 45%;
+    height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0px 0px 15px -8px $dark;
+}
+
+.account--summary {
+    width: 20%;
+    align-items: center;
+}
+
+.account--overview {
+    width: 70%;
+    align-items: flex-start;
+    padding: 1.5em 2em;
+}
+
+.account--overview p {
+    
+}
+
+.account__name {
+    font-size: 1.6em;
+}
+
+.account__avatar {
+    max-width: 40%;
+    margin: 1em;
+}
+
+.account__links {
+    margin: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
+
+.account__link {
+    margin: .6em 0;
+    color: $muted;
+    width: 100%;
+}
+
+.account__link a:hover {
+    color: $primary;
+}

@@ -108,12 +108,108 @@ h1, h2 {
   padding: 5em 6em;
 }
 
+.accountRow {
+  max-width: 100%;
+  margin: 2em 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.account {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em;
+  width: 45%;
+  height: 75vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-shadow: 0px 0px 15px -8px #3c3c3b;
+          box-shadow: 0px 0px 15px -8px #3c3c3b;
+}
+
+.account--summary {
+  width: 20%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.account--overview {
+  width: 70%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 1.5em 2em;
+}
+
+.account__name {
+  font-size: 1.6em;
+}
+
+.account__avatar {
+  max-width: 40%;
+  margin: 1em;
+}
+
+.account__links {
+  margin: 2em 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.account__link {
+  margin: .6em 0;
+  color: #7f7f7f;
+  width: 100%;
+}
+
+.account__link a:hover {
+  color: #EF773F;
+}
+
 a {
   text-decoration: none;
 }
 
 .nav {
-  border-bottom: solid 1px #3c3c3b;
+  -webkit-box-shadow: 0px 5px 15px -7px #3c3c3b;
+          box-shadow: 0px 5px 15px -7px #3c3c3b;
   padding: .6em 1.2em;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -5,7 +5,8 @@ a {
 }
 
 .nav {
-    border-bottom: solid 1px $dark;
+    // border-bottom: solid 1px $dark;
+    box-shadow: 0px 5px 15px -7px $dark;
     padding: .6em 1.2em;
     display: flex;
     flex-direction: row;

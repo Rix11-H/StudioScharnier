@@ -1,7 +1,7 @@
 <nav class="nav nav--desktop ">
     <div class="nav__front">
         <a href="index.php" class="nav__logo">
-            <img src="./assets/imgs/278087737_3045400305709969_4315556377183470121_n.png" class="logo" />
+            <img src="./assets/imgs/logo.png" class="logo" />
         </a>
     </div>
     <div class="nav__back">
@@ -25,7 +25,7 @@
 <nav class="nav nav--mobile" >
     <div class="nav__front">
         <a href="index.php" class="nav__logo">
-            <img src="./assets/imgs/278087737_3045400305709969_4315556377183470121_n.png" class="logo" />
+            <img src="./assets/imgs/logo.png" class="logo" />
         </a>
     </div class="nav__back">
     <div class="dropdown show">
