@@ -11,74 +11,7 @@ if (isset($_SESSION["user"])) {
     $loggedin = false;
 }
 
-
-    $studioView = false;
-
-    $conn = DB::getConnection();
-    $statement = $conn->prepare("SELECT * FROM content");
-    $statement->execute();
-    $videos = $statement->fetchAll();
-
-    $uploadStatusMsg = "";
-
-    //upload file to server
-    if (!empty($_POST['submit'])) {
-        $file = $_FILES['videoUpload'];
-    
-        $fileName = $_FILES['videoUpload']['name'];
-        $fileTmpName = $_FILES['videoUpload']['tmp_name'];
-        $fileSize = $_FILES['videoUpload']['size'];
-        $fileError = $_FILES['videoUpload']['error'];
-        $fileType = $_FILES['videoUpload']['type'];
-
-        $fileExt = explode('.', $fileName);
-        $fileActualExt = strtolower(end($fileExt));
-    
-        $allowed = array('avi', 'flv', 'wmv', "mov", "mp4");
-    
-        //table projects
-        if (in_array($fileActualExt, $allowed)) {
-            if ($fileError === 0) {
-                if ($fileSize < 100000000000) {
-                    $fileNameNew = uniqid('', true) . "." . $fileActualExt;
-                    $fileDestination = 'video/' . $fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-
-                    //query
-    
-                    $conn = DB::getConnection();
-                    $statement = $conn->prepare("INSERT INTO content (title, description, time, duration, cover_img, amount_views, content_type, url, alt) VALUES (:title, :desc, :time, :duration, :cover, :views, :type, :url, :alt)");
-                    $statement->bindValue(':url', $fileDestination);
-                    $statement->bindValue(':title', $_POST['videoTitle']);
-                    $statement->bindValue(':desc', $_POST['videoDescription']);
-                    $statement->bindValue(':duration', "" );
-                    $statement->bindValue(':time', date('d-m-y h:i:s'));
-                    $statement->bindValue(':cover', "" );
-                    $statement->bindValue(':views', 0);
-                    $statement->bindValue(':type', $fileType);
-                    $statement->bindValue(':alt', "video" . $_POST['videoTitle']);
-                    $statement->execute();
-    
-                    if ($statement) {
-                        $uploadStatusMsg = "Project uploaded succesfully";
-                        header("Refresh:0");
-                        header("video.php");
-                
-                    } else {
-                        $uploadStatusMsg = "Sorry, there was an error uploading your file.";
-                    }
-                } else {
-                    $uploadStatusMsg = "Your file is too big!";
-                }
-            } else {
-                $uploadStatusMsg = "Upload failed, please try again.";
-            }
-        } else {
-            $uploadStatusMsg = "Error";
-        } 
-    } else {
-        $uploadStatusMsg = "Nothin submitted";
-    }
+$images = Content::getAllImages();
 
 
 ?><!DOCTYPE html>
@@ -108,32 +41,28 @@ if (isset($_SESSION["user"])) {
     </header>
     <hr class="mx-4">
     <main> <!--https://www.sourcecodester.com/tutorials/php/12672/php-simple-video-upload.html-->
-    <?php if($studioView === true): ?>
-        <div class="videoUploadForm ">
-            <form action="" method="POST" enctype="multipart/form-data">
-                <input type="text" name="videoTitle" id="videoTitle" placeholder="Title">
-                <input type="text-area" name="videoDescription" id="videoDescription" placeholder="Description">
-                <input type="file" name="videoUpload" id="videoUpload" placeholder="choose a video">
-                <input type="submit" value="Upload" name="submit">
+    <div class="search__container">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Zoek..." aria-label="Search">
+                <button class="btn btn--primary" type="zoeken">Search</button>
             </form>
         </div>
-        <div class="div">
-            <p><?php echo $uploadStatusMsg ?></p>
-        </div>
-    <?php endif; ?>
-        <div class="uploadedContent m-2">
-            <?php foreach($videos as $video): ?>
-                <div class="card card--video">
-                    <video class="card__video" src="<?php echo $video['url'] ?>" controls></video>
+    
+    <div class="uploadedContent m-2">
+            <?php foreach($images as $image): ?>
+                <div class="card card--static">
+                    <img class="card__image" src="<?php echo $image['url'] ?>"></img>
                     <div class="card__text">
-                        <div class="">
-                            <h3 class="card__title"><?php echo $video["title"] ?></h3>
-                            <p class="card__description"><?php echo $video["description"] ?></p>
-                        </div>
-                        <a href="#" class="card__link">Ontdek meer</a>
+                        <h3 class="card__title"><?php echo $image["title"] ?></h3>
                     </div>
                 </div>
             <?php endforeach; ?>
+            <?php if ($loggedin && $_SESSION["user"]["role"] !="user") : ?>
+                <a class="card card--static card--add" href="addContent.php?page=static" >
+                    <img class="card--add__img" src="./assets/imgs/addBtn.png" alt="add">
+                </a>
+            <?php endif; ?>
+
         </div>
     </main>
 

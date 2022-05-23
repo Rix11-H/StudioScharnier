@@ -6,7 +6,7 @@
     </div>
     <div class="nav__back">
         <a href="index.php" class="nav__link">Home</a>
-        <a href="radio.php" class="nav__link">Radio</a>
+        <a href="audio.php" class="nav__link">Audio</a>
         <a href="video.php" class="nav__link">Video</a>
         <a href="beeld.php" class="nav__link">Beeld</a>
         <a href="texts.php" class="nav__link">Teksten</a>
@@ -34,7 +34,7 @@
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item nav__link" href="radio.php">Radio</a>
+            <a class="dropdown-item nav__link" href="audio.php">audio</a>
             <a class="dropdown-item nav__link" href="video.php">Video</a>
             <a class="dropdown-item nav__link" href="texts.php">Tekst</a>
             <a class="dropdown-item nav__link" href="beeld.php">Beeld</a>

@@ -44,6 +44,20 @@
     background-color: $danger;
 }
 
+.btn--danger--outline {
+    color: $danger;
+    background-color: $neutral;
+    border: 2px solid $danger;
+
+}
+
+.btn--danger--outline:hover {
+    background-color: $danger;
+    color: $neutral;
+}
+
+
+
 .btn--success {
     background-color: $success;
 }
@@ -52,7 +66,21 @@
     color: $neutral;
 }
 
-.btn--ghost  {
-    border: 1px solid $dark;
+.btn--ghost--outline  {
+    border: 2px solid $muted;
+    color: $muted;
+}
+
+.btn--ghost--outline:hover {
+    background-color: $muted;
+    color: $neutral;
+
+}
+
+.btn--small {
+    font-size: .8em;
+    padding: .4em 0;
+    width: 6em;
+    margin: .2em 0;
 }
 
