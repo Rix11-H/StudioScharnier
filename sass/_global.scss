@@ -170,14 +170,14 @@ h1, h2 {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr ;
-    gap: 2em;
+    gap: 1%;
 }
 
 
 .aside--detail {
     max-height: 100%;
     overflow-y: hidden;
-    padding: 1em 2em;
+    padding: 0 2em;
 
 
 }
@@ -226,6 +226,11 @@ h1, h2 {
     margin-top: 2em;
 }
 
+.main__description h1 {
+    padding: .4em 0;
+    border-bottom: 2px solid $muted;
+}
+
 
 @media (max-width: 500px) {
     .studioRow {
@@ -264,5 +269,21 @@ h1, h2 {
         align-items: flex-start;
         padding: 1.5em 2em;
     }
+
+    .flex--detail {
+        display: block;
+    }
+
+    .main--detail {
+        width: 100%;
+    }
+
+    .aside--detail {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    
+    
             
 }

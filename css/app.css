@@ -261,13 +261,13 @@ h1, h2 {
       grid-template-columns: 2fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
-  gap: 2em;
+  gap: 1%;
 }
 
 .aside--detail {
   max-height: 100%;
   overflow-y: hidden;
-  padding: 1em 2em;
+  padding: 0 2em;
 }
 
 .aside__box {
@@ -316,6 +316,11 @@ h1, h2 {
 
 .backdiv {
   margin-top: 2em;
+}
+
+.main__description h1 {
+  padding: .4em 0;
+  border-bottom: 2px solid #b3b3b3;
 }
 
 @media (max-width: 500px) {
@@ -374,6 +379,24 @@ h1, h2 {
         -ms-flex-align: start;
             align-items: flex-start;
     padding: 1.5em 2em;
+  }
+  .flex--detail {
+    display: block;
+  }
+  .main--detail {
+    width: 100%;
+  }
+  .aside--detail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 

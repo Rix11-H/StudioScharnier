@@ -55,9 +55,10 @@ $contents = Content::getAllContent();
                         <img src="<?php echo $detail["url"]; ?>" alt="<?php echo htmlspecialchars($detail["alt"]); ?>">
                     <?php endif; ?>
             </div>
-            <h1><?php echo htmlspecialchars($detail["title"]); ?></h1>
             <div class="main__description">
-                <p><?php echo htmlspecialchars($detail["description"]); ?></p>
+            <h1><?php echo htmlspecialchars($detail["title"]); ?></h1>
+            <p class="text-muted mb-2">Beschrijving</p>    
+            <p><?php echo htmlspecialchars($detail["description"]); ?></p>
             </div>
         </div>
         <div class="aside--detail">
