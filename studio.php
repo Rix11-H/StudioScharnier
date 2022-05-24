@@ -86,7 +86,7 @@ if($page == "audio") {
                     <div class="studioCard__menu">
                         <a href="studio.php?page=video&action=edit&id=<?php echo $video["id"] ?>" class="studioCard__edit card__edit btn btn--primary--outline btn--small">Bewerk</a>
                         <a href="studio.php?page=video&action=delete&id=<?php echo $video["id"] ?>" class="studioCard__delete card__delete btn btn--danger--outline btn--small">Verwijder</a>
-                        <a href="video.php?id=<?php echo $video["id"] ?>" class="studioCard__goto btn btn--ghost--outline btn--small">Bekijk</a>
+                        <a href="details.php?id=<?php echo htmlspecialchars($video["id"]); ?>" class="studioCard__goto btn btn--ghost--outline btn--small">Bekijk</a>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -107,7 +107,7 @@ if($page == "audio") {
                     <div class="studioCard__menu">
                         <a href="studio.php?page=video&action=edit&id=<?php echo $image["id"] ?>" class="studioCard__edit card__edit btn btn--primary--outline btn--small">Bewerk</a>
                         <a href="studio.php?page=video&action=delete&id=<?php echo $image["id"] ?>" class="studioCard__delete card__delete btn btn--danger--outline btn--small">Verwijder</a>
-                        <a href="video.php?id=<?php echo $image["id"] ?>" class="studioCard__goto btn btn--ghost--outline btn--small">Bekijk</a>
+                        <a href="details.php?id=<?php echo htmlspecialchars($image["id"]); ?>" class="studioCard__goto btn btn--ghost--outline btn--small">Bekijk</a>
                     </div>
             </div>
             <?php endforeach; ?>
@@ -128,7 +128,7 @@ if($page == "audio") {
                     <div class="studioCard__menu">
                         <a href="studio.php?page=video&action=edit&id=<?php echo $text["id"] ?>" class="studioCard__edit card__edit btn btn--primary--outline btn--small">Bewerk</a>
                         <a href="studio.php?page=video&action=delete&id=<?php echo $text["id"] ?>" class="studioCard__delete card__delete btn btn--danger--outline btn--small">Verwijder</a>
-                        <a href="video.php?id=<?php echo $text["id"] ?>" class="studioCard__goto btn btn--ghost--outline btn--small">Bekijk</a>
+                        <a href="details.php?id=<?php echo htmlspecialchars($text["id"]); ?>" class="studioCard__goto btn btn--ghost--outline btn--small">Bekijk</a>
                     </div>
                 </div>
             <?php endforeach; ?>

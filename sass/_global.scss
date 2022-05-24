@@ -166,6 +166,67 @@ h1, h2 {
     font-size: .8em;
 }
 
+.flex--detail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr ;
+    gap: 2em;
+}
+
+
+.aside--detail {
+    max-height: 100%;
+    overflow-y: hidden;
+    padding: 1em 2em;
+
+
+}
+
+.aside__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.aside__item {
+    margin: 1em 0;
+    border-bottom: 1px solid $primary;
+}
+
+.aside__item h3 {
+    padding: .5em;
+}
+
+.aside__item img {
+    max-width: 100%;
+}
+
+
+.main__visual img {
+    max-width: 100%;
+}
+
+.aside--detail h2 {
+    font-size: 1.4em;
+}
+
+.aside--detail h3 {
+    font-size: 1em;
+}
+
+.back {
+    color: $primary;
+    font-size: 1.2em;
+}
+
+.back:hover {
+    color: $muted;
+}
+
+.backdiv {
+    margin-top: 2em;
+}
+
+
 @media (max-width: 500px) {
     .studioRow {
         max-width:100%;

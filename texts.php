@@ -50,7 +50,7 @@
     
     <div class="uploadedContent m-2">
         <?php foreach($texts as $text): ?>
-                <a class="card card--static" href="#">
+                <a class="card card--static" href="details.php?id=<?php echo htmlspecialchars($text["id"]); ?>">
                     
                     <img class="card__image" src="<?php if(!empty($text["url"])) { echo $text["url"];} else {echo "./assets/imgs/defaultArticleImg.jpeg" ;} ?>"></img>
 

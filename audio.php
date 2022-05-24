@@ -39,7 +39,6 @@ $audios = Content::getAllAudio();
             <p class="header__top">Luister hier</p>
             <h2 class="header__title">Newest Audio</h2>
             <p class="header__desc mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fuga non numquam hic soluta? Consequatur dolore tempora saepe quia facilis, repudiandae corporis minus a asperiores optio, autem, natus aperiam rem.</p>
-            <a href="#" class="card__link">Ontdek meer...</a>
         </div>
     </header>
     <hr class="mx-4">
@@ -60,7 +59,7 @@ $audios = Content::getAllAudio();
                         <figcaption class="card--audio__title"><?php echo $audio["title"] ?></figcaption>
                         <audio controls src="<?php echo $audio["url"] ?>">
                         </audio>
-                        <a href="#" class="card__link">Meer</a>
+                        <a href="details.php?id=<?php echo htmlspecialchars($audio["id"]); ?>" class="card__link">Meer</a>
                     </figure>
                 </div>
                 <?php endforeach; ?>

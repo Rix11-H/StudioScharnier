@@ -1,27 +1,31 @@
 <?php
 
-    include_once("bootstrap.php");
+include_once("bootstrap.php");
 
-    session_start();
+session_start();
 
-    // variable loggedin is used to see if user is logged in or not
-    if (isset($_SESSION["user"])) {
-        $loggedin = true;
-    } else {
-        $loggedin = false;
-    }
+// variable loggedin is used to see if user is logged in or not
+if (isset($_SESSION["user"])) {
+    $loggedin = true;
+} else {
+    $loggedin = false;
+}
 
-    if (!isset($_GET["id"])) {
-        $getId = "notfound";
-    } else {
-        $getId = $_GET["id"];
-        $detail = Content::getContentById($getId);
-    }
-    
+if (!isset($_GET["id"])) {
+    $getId = "notfound";
+} else {
+    $getId = $_GET["id"];
+    $detail = Content::getContentById($getId);
+}
+
+$contents = Content::getAllContent();
 
 
-?><!DOCTYPE html>
+
+?>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,21 +37,63 @@
     <!--- css --->
     <link rel="stylesheet" href="css/app.css?v=<?php echo time() ?>">
 </head>
+
 <body>
 
     <?php include_once("Includes/nav.inc.php"); ?>
-    <main class="main--detail"> <!--https://www.sourcecodester.com/tutorials/php/12672/php-simple-video-upload.html-->
-        <h1><?php echo htmlspecialchars($detail["title"]); ?></h1>
-        <?php if($detail["content_type"] == "video/mp4"): ?>
-            <video width="50%" height="auto" controls src="<?php echo htmlspecialchars($detail["url"]); ?>">
-            />
-        <?php else: ?>
-                <img src="<?php echo $detail["url"]; ?>" alt="<?php echo htmlspecialchars($detail["alt"]); ?>">
-        <?php endif; ?>
-    
-        </main>
-
+    <div class="backdiv">
+    <a class="back m-4" href="javascript:history.go(-1)">< Terug</a>
+    </div>
+    <div class="flex--detail m-4">
+        <div class="main--detail">
+            <!--https://www.sourcecodester.com/tutorials/php/12672/php-simple-video-upload.html-->
+            <div class="main__visual">
+                <?php if ($detail["content_type"] == "video/mp4") : ?>
+                    <video width="100%" height="auto" controls src="<?php echo htmlspecialchars($detail["url"]); ?>">
+                        />
+                    <?php else : ?>
+                        <img src="<?php echo $detail["url"]; ?>" alt="<?php echo htmlspecialchars($detail["alt"]); ?>">
+                    <?php endif; ?>
+            </div>
+            <h1><?php echo htmlspecialchars($detail["title"]); ?></h1>
+            <div class="main__description">
+                <p><?php echo htmlspecialchars($detail["description"]); ?></p>
+            </div>
+        </div>
+        <div class="aside--detail">
+            <h2>Ook interessant</h2>
+            <div class="aside__box">
+                <?php foreach (array_slice($contents, 0, 5) as $content) : ?>
+                    <?php if ($content["content_type"] != ("audio/mp3")) : ?>
+                        <div class="aside__item">
+                            <a href="details.php?id=<?php echo $content["id"]; ?>">
+                                <?php if ($content["content_type"] == "video/mp4") : ?>
+                                    <video width="100%" height="auto" controls src="<?php echo htmlspecialchars($content["url"]); ?>">
+                                        />
+                                    <?php else : ?>
+                                        <img class="detail__img" src="<?php if (!empty($content["cover_img"])) {
+                                                                    echo $content["cover_img"];
+                                                                } else {
+                                                                    echo $content["url"];
+                                                                } ?>" alt="<?php echo htmlspecialchars($content["alt"]); ?>">
+                                    <?php endif; ?>
+                            </a>
+                            <h3><?php echo htmlspecialchars($content["title"]); ?></h3>
+                        </div>
+                    <?php else : ?>
+                        <figure class="audio--card__flex">
+                            <figcaption class="card--audio__title"><?php echo $audio["title"] ?></figcaption>
+                            <audio controls src="<?php echo $audio["url"] ?>">
+                            </audio>
+                            <a href="#" class="card__link">Meer</a>
+                        </figure>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
     <?php include_once("Includes/footer.inc.php"); ?>
 
 </body>
+
 </html>

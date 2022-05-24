@@ -35,7 +35,6 @@
             <p class="header__top">Bekijk hier</p>
             <h2 class="header__title">Recommended video title</h2>
             <p class="header__desc mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fuga non numquam hic soluta? Consequatur dolore tempora saepe quia facilis, repudiandae corporis minus a asperiores optio, autem, natus aperiam rem.</p>
-            <a href="#" class="card__link">Bekijk video</a>
         </div>
     </header>
     <hr class="mx-4">
