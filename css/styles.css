@@ -1,8 +1,15 @@
 @font-face {
-    font-family: "Poppins";
-    src: 
-    url(../assets/fonts/Poppins/Poppins-Thin.ttf);
+    font-family: "Poppins-light";
+    src: url(../assets/fonts/Poppins/Poppins-Thin.ttf);
+    font-weight: light;
 }
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+
 
 *, html {
     box-sizing: border-box;
@@ -12,42 +19,75 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins";
 }
 
 .background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    position: relative; 
     width: 100vw;
-    height:110vh;
+    height:90vh;
+    background-color: rgba(255, 255, 255, 0.382);
     background-image: url(../assets/imgs/coming-soon.jpeg);
+    background-blend-mode: lighten;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.content {
+.flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 300px 100%;
-    background-color: rgba(159, 159, 159, 0.4);
+}
+
+.product {
+    color:#EF773F;
+    text-shadow: 0px 0px 12px rgb(0, 0, 0);
+}
+
+.product:hover {
+    color:#EF773F;
+    text-shadow: 0px 0px  8px black;
+    text-decoration: none;
+}
+
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height:90vh;
+    z-index: 2;
+    /* padding: 200px 100%;
+    background-color: rgba(159, 159, 159, 0.4); */
 }
 
 .logo {
     text-align: center;
     width: 400px;
     height: auto;
+
 }
 
 h1 {
     color: white;
     margin: 0;
     padding: 0;
+    width: 100%;
+    text-align: center;
+    font-family: "Poppins-light";
     text-shadow: 0px 0px  8px black;
+}
+
+.content p {
+    text-shadow: 0px 0px  8px rgba(255, 255, 255, 0.392);
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
 }
 
 h2 {
@@ -55,6 +95,43 @@ h2 {
     color: #EF773F;
 }
 
-main {
-    margin: 10%;
+section {
+    margin-top: 4em;
+}
+
+.main {
+    margin: 0em 10%;
+}
+
+.survey {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgb(122, 122, 122);
+    margin: 5em 10%;
+    padding: .8em 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.survey img {
+    width: 300px;
+    max-width: 100%;
+    margin: 1em 0;
+}
+
+@media (max-width:500px) {
+    .content, p, h1 {
+        width: 80%;
+    }
+
+    .logo {
+        width: 250px;
+    }
+
+    h1 {
+        font-size: 1.2em;;
+    }
+
 }
