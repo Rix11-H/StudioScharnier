@@ -38,7 +38,7 @@ if($page == "audio") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profiel | Studio Scharnier</title>
+    <title>Studio | Studio Scharnier</title>
     <link rel="icon" type="image/png" href="./assets/imgs/favicon.png">
     <!--- bootstrap --->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -66,9 +66,16 @@ if($page == "audio") {
             </div>
         </div>
         <div class="studio studio--overview">
+            <div class="overviewHeader">
             <h1>Overzicht</h1>
+
+                <?php if(!empty($page)): ?>
+                <a class="overviewHeader__img" href="addContent.php?page=<?php echo $page ?>"><img  src="assets/imgs/addBtn.png" alt="+" /></a>
+                <?php endif; ?>
+            
+            </div>
             <?php if(!isset($page) || empty($page)): ?>
-            <h4>Selecteer content type</h4>
+                <h4>Selecteer content type</h4>
             <?php endif; ?>
 
             <?php if(!empty($page) && $page == "video"): ?>

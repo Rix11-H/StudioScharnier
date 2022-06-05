@@ -80,10 +80,10 @@ if (!empty($_POST['submitFile'])) {
                 <span class="studio__link"><a href="studio.php" <?php if (empty($page) || $page == "") {
                                                                     echo "style='color:#ef773e;text-decoration:underline;'";
                                                                 } ?>>Overzicht</a> ></span>
-                <span class="studio__link"><a href="studio.php?page=radio" <?php if (!empty($page) && $page == "radio") {
+                <span class="studio__link"><a href="studio.php?page=audio" <?php if (!empty($page) && $page == "audio") {
                                                                                 echo "style='color:#ef773e;text-decoration:underline;'";
-                                                                            } ?>>Audio</a><?php if (!empty($radio)) {
-                                                                                                echo "(" . $radio . ")";
+                                                                            } ?>>Audio</a><?php if (!empty($audio)) {
+                                                                                                echo "(" . $audio . ")";
                                                                                             } else {
                                                                                                 echo "";
                                                                                             } ?> ></span>

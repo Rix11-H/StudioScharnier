@@ -231,6 +231,23 @@ h1, h2 {
     border-bottom: 2px solid $muted;
 }
 
+.overviewHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.overviewHeader__img  {
+    margin-left: 1em;
+    margin-bottom: .4em;
+}
+
+.overviewHeader__img img {
+    width: 35px;
+    height: 35px;
+    
+}
+
 
 @media (max-width: 500px) {
     .studioRow {

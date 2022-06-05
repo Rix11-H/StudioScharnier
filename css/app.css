@@ -323,6 +323,29 @@ h1, h2 {
   border-bottom: 2px solid #b3b3b3;
 }
 
+.overviewHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overviewHeader__img {
+  margin-left: 1em;
+  margin-bottom: .4em;
+}
+
+.overviewHeader__img img {
+  width: 35px;
+  height: 35px;
+}
+
 @media (max-width: 500px) {
   .studioRow {
     max-width: 100%;
@@ -714,6 +737,7 @@ a {
 .card--audio {
   width: 100%;
   height: 40px;
+  max-height: 200px;
   margin: .1em 1em;
   background-color: #F1F3F4;
 }
@@ -721,13 +745,13 @@ a {
 .card--audio__title {
   color: #EF773F;
   font-size: 1.2em;
-  width: 10%;
+  width: 30%;
 }
 
 audio {
   border-radius: 6px;
   color: #EF773F;
-  width: 80%;
+  width: 60%;
   max-width: 100%;
   height: 32px;
 }

@@ -96,6 +96,7 @@
 .card--audio {
     width: 100%;
     height: 40px;
+    max-height: 200px;
     margin: .1em 1em;
     background-color: #F1F3F4;
     // display: flex; 
@@ -107,14 +108,14 @@
 .card--audio__title {
     color: $primary;
     font-size: 1.2em;
-    width: 10%;
+    width: 30%;
 
 }
 
 audio {
     border-radius: 6px;
     color: $primary;
-    width: 80%;
+    width: 60%;
     max-width: 100%;
     height: 32px;
 }

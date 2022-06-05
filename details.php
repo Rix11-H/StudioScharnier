@@ -52,7 +52,7 @@ $contents = Content::getAllContent();
                     <video width="100%" height="auto" controls src="<?php echo htmlspecialchars($detail["url"]); ?>">
                         />
                     <?php else : ?>
-                        <img src="<?php echo $detail["url"]; ?>" alt="<?php echo htmlspecialchars($detail["alt"]); ?>">
+                        <img src="<?php if(!empty($detail["url"])){ echo $detail["url"];} else { echo $detail["cover_img"];}; ?>" alt="<?php echo ($detail["alt"]); ?>">
                     <?php endif; ?>
             </div>
             <div class="main__description">
