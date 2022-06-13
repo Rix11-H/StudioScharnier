@@ -37,8 +37,8 @@ $audios = Content::getAllAudio();
         <div class="card--header">
             <img class="header__img" src="./assets/imgs/defaultAudioImg.webp" alt="">
             <p class="header__top">Luister hier</p>
-            <h2 class="header__title">Newest Audio</h2>
-            <p class="header__desc mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fuga non numquam hic soluta? Consequatur dolore tempora saepe quia facilis, repudiandae corporis minus a asperiores optio, autem, natus aperiam rem.</p>
+            <h2 class="header__title">Featured deze week!</h2>
+            <p class="header__desc mr-4">Ter ere van de vrijspraak van Johnny Depp kan je vanaf deze week het thema van de Pirates of the Caribbean films beluisteren!</p>
         </div>
     </header>
     <hr class="mx-4">
@@ -52,14 +52,13 @@ $audios = Content::getAllAudio();
 
         <!--https://www.sourcecodester.com/tutorials/php/12672/php-simple-video-upload.html-->
         <div class="uploadedContent uploadedContent--audio m-2">
-            <h2 class="mx-3 mb-4">Alle bestanden</h2>
+            <h2 class="mx-3 my-4">Te beluisteren</h2>
             <?php foreach ($audios as $audio) : ?>
                 <div class="card card--audio" href="#">
                     <figure class="audio--card__flex">
                         <figcaption class="card--audio__title"><?php echo $audio["title"] ?></figcaption>
                         <audio controls src="<?php echo $audio["url"] ?>">
                         </audio>
-                        <a href="details.php?id=<?php echo htmlspecialchars($audio["id"]); ?>" class="card__link">Meer</a>
                     </figure>
                 </div>
                 <?php endforeach; ?>

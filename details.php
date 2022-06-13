@@ -42,7 +42,8 @@ $contents = Content::getAllContent();
 
     <?php include_once("Includes/nav.inc.php"); ?>
     <div class="backdiv">
-    <a class="back m-4" href="javascript:history.go(-1)">< Terug</a>
+        <a class="back m-4" href="javascript:history.go(-1)">
+            < Terug</a>
     </div>
     <div class="flex--detail m-4">
         <div class="main--detail">
@@ -51,14 +52,25 @@ $contents = Content::getAllContent();
                 <?php if ($detail["content_type"] == "video/mp4") : ?>
                     <video width="100%" height="auto" controls src="<?php echo htmlspecialchars($detail["url"]); ?>">
                         />
-                    <?php else : ?>
-                        <img src="<?php if(!empty($detail["url"])){ echo $detail["url"];} else { echo $detail["cover_img"];}; ?>" alt="<?php echo ($detail["alt"]); ?>">
+                    <?php else: ?>
+                        <img src="<?php if((!empty($detail["url"]))) {
+                                        echo $detail["url"];
+                                    } else {
+                                        echo $detail["cover_img"];
+                                    }; ?>" alt="<?php echo ($detail["alt"]); ?>">
                     <?php endif; ?>
             </div>
             <div class="main__description">
-            <h1><?php echo htmlspecialchars($detail["title"]); ?></h1>
-            <p class="text-muted mb-2">Beschrijving</p>    
-            <p><?php echo htmlspecialchars($detail["description"]); ?></p>
+                <h1><?php echo htmlspecialchars($detail["title"]); ?></h1>
+
+                <?php if ($detail["content_type"] != "text") : ?>
+                    <p class="text-muted mb-2">Beschrijving</p>
+                <?php else : ?>
+                    <br>
+                    <p><?php echo $detail["description"]; ?></p>
+                <?php endif; ?>
+
+                <p><?php echo htmlspecialchars($detail["description"]); ?></p>
             </div>
         </div>
         <div class="aside--detail">
@@ -73,10 +85,10 @@ $contents = Content::getAllContent();
                                         />
                                     <?php else : ?>
                                         <img class="detail__img" src="<?php if (!empty($content["cover_img"])) {
-                                                                    echo $content["cover_img"];
-                                                                } else {
-                                                                    echo $content["url"];
-                                                                } ?>" alt="<?php echo htmlspecialchars($content["alt"]); ?>">
+                                                                            echo $content["cover_img"];
+                                                                        } else {
+                                                                            echo $content["url"];
+                                                                        } ?>" alt="<?php echo htmlspecialchars($content["alt"]); ?>">
                                     <?php endif; ?>
                             </a>
                             <h3><?php echo htmlspecialchars($content["title"]); ?></h3>

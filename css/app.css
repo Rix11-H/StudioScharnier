@@ -71,8 +71,73 @@ h1, h2 {
   width: 100%;
 }
 
-.landing img {
+.landing .landing__logo {
+  width: 400px;
+  padding: 2em;
+  -webkit-filter: saturate(1.1) contrast(1.1);
+          filter: saturate(1.1) contrast(1.1);
+}
+
+section.landingsection {
+  margin: 2em 4em;
+  margin-top: 60px;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+section.landingsection--alter {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section.contact {
+  border-top: 1px solid #EF773F;
+  padding: 4em 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.what .right {
+  width: 35%;
+}
+
+.what .left {
+  width: 65%;
+}
+
+.mockup {
+  width: 100%;
+  height: auto;
+}
+
+.more .right {
   width: 40%;
+}
+
+.more .left {
+  width: 45%;
+}
+
+.workingSS {
+  width: 100%;
 }
 
 .uploadedContent {
@@ -101,17 +166,45 @@ h1, h2 {
 
 .background {
   width: 100%;
-  height: 100vh;
-  background-color: #3c3c3b;
+  height: 90.7vh;
+  background-color: rgba(255, 255, 255, 0.463);
   background-image: url(../assets/imgs/coming-soon.jpeg);
-  background-blend-mode: luminosity;
+  background-blend-mode: hard-light;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.background--login {
+  height: 110vh;
+}
+
 .content {
   padding: 5em 6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  height: 100%;
+  -webkit-backdrop-filter: none;
+          backdrop-filter: none;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+.content--login {
+  padding: 2em;
+  width: 100%;
+  margin: 0;
 }
 
 .studioRow {
@@ -590,7 +683,8 @@ a {
 @use "./styles/colors";
 @use "../styles/colors";
 .form--account {
-  max-width: 60%;
+  max-width: 100%;
+  width: 80%;
   -webkit-box-shadow: 10px 10px 30px 4px #3c3c3b;
           box-shadow: 10px 10px 30px 4px #3c3c3b;
   background-color: #f6f6f6;

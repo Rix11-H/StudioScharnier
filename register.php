@@ -50,9 +50,9 @@ if (!empty($_POST)) {
 
 <body>
     <main class="login">
-        <div class="background">
-            <div class="content">
-                <form action="" method="post" class="form form--account">
+        <div class="background background--login">
+            <div class="content content--login">
+                <form action="" method="post" class="form form--account form--register">
                     <h1 class="pb-3">Register</h1>
                     <div class="form__flex d-flex justify-content-stretch">
                         <div class="form-group w-50 mr-2">
@@ -91,6 +91,7 @@ if (!empty($_POST)) {
             </div>
         </div>
     </main>
+
     <?php include_once("Includes/footer.inc.php"); ?>
 </body>
 

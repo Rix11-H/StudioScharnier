@@ -1,14 +1,14 @@
 @use "../styles/colors";
 
 .form--account {
-    max-width: 60%;
+    max-width: 100%;
+    width: 80%;
     // border: 2px solid $primary;
     box-shadow: 10px 10px 30px 4px $dark;
     background-color: $neutral;
     border-radius: 6px;
     padding: 2em;
     margin: 0 auto;
-
 }
 
 .form--add {

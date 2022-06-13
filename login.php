@@ -41,7 +41,7 @@ if (!empty($_POST["submit"])) {
 <body>
     <main class="login">
         <div class="background">
-            <div class="content">
+            <div class="content content--login">
                 <form action="" method="POST" class="form form--account">
                     <h1 class="pb-3">Login</h1>
                     <?php if (isset($error)) : ?>

@@ -33,15 +33,15 @@
         <div class="card--header">
             <img class="header__img" src="https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
             <p class="header__top">Bekijk hier</p>
-            <h2 class="header__title">Recommended video title</h2>
-            <p class="header__desc mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fuga non numquam hic soluta? Consequatur dolore tempora saepe quia facilis, repudiandae corporis minus a asperiores optio, autem, natus aperiam rem.</p>
+            <h2 class="header__title">Studio Scharnier... Start!</h2>
+            <p class="header__desc mr-4">Langzaam maar zeker begint het platform vorm te krijgen. Nu er een basisidee gevormd kan worden over de functionaliteiten van het platform, kan er verder samengezeten worden met partners over hoe het project verder vorm moet krijgen. Wij zijn alvast benieuw naar hoe het verhaal verdergaat!</p>
         </div>
     </header>
     <hr class="mx-4">
     <main> <!--https://www.sourcecodester.com/tutorials/php/12672/php-simple-video-upload.html-->
 
     <?php if($loggedin === false): ?>
-        <p>You're not authorized to view this content.</p>
+        <p class="px-4 py-1 text-muted">Hier zijn geen openbare video's te bekijken.</p>
     <?php else: ?>
         <div class="search__container">
             <form class="d-flex" role="search">

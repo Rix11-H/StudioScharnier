@@ -32,11 +32,18 @@
     <?php include_once("Includes/nav.inc.php"); ?>
     <header class="m-4">
         <div class="card--header">
-            <img class="header__img" src="https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            <img class="header__img" src="<?php if(!empty($texts[0]["url"])) { echo $texts[0]["url"];} else {echo "./assets/imgs/defaultArticleImg.jpeg" ;} ?>" alt="">
             <p class="header__top">Bekijk hier</p>
-            <h2 class="header__title">Recommended article title</h2>
-            <p class="header__desc mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fuga non numquam hic soluta? Consequatur dolore tempora saepe quia facilis, repudiandae corporis minus a asperiores optio, autem, natus aperiam rem.</p>
-            <a href="#" class="card__link">Lees meer...</a>
+            <h2 class="header__title"><?php echo $texts[0]["title"] ?></h2>
+            <p class="header__desc mr-4"><?php 
+                $string = $texts[0]["description"];
+                if (strlen($string) > 700) {
+                    $stringCut = substr($string, 0, 750);
+                    $string = substr($stringCut, 0, strrpos($stringCut, ' ')). '<a href="details.php?id=' . htmlspecialchars($texts[0]['id']) . '" class="card__link"> ... Lees meer</a>';
+                }
+                echo $string;
+            ?></p>
+            
         </div>
     </header>
     <hr class="mx-4">

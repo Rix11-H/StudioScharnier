@@ -32,10 +32,10 @@ $images = Content::getAllImages();
     <?php include_once("Includes/nav.inc.php"); ?>
     <header class="m-4">
         <div class="card--header">
-            <img class="header__img" src="https://images.pexels.com/photos/1117132/pexels-photo-1117132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+            <img class="header__img" src="<?php echo $images[2]['url'] ?>" alt="">
             <p class="header__top">Bekijk hier</p>
-            <h2 class="header__title">Recommended work title</h2>
-            <p class="header__desc mr-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fuga non numquam hic soluta? Consequatur dolore tempora saepe quia facilis, repudiandae corporis minus a asperiores optio, autem, natus aperiam rem.</p>
+            <h2 class="header__title"><?php echo $images[2]["title"] ?></h2>
+            <p class="header__desc mr-4"><?php echo $images[2]["description"] ?></p>
         </div>
     </header>
     <hr class="mx-4">
@@ -49,12 +49,12 @@ $images = Content::getAllImages();
     
     <div class="uploadedContent m-2">
             <?php foreach($images as $image): ?>
-                <div class="card card--static">
+                <a class="card card--static" href="details.php?id=<?php echo htmlspecialchars($image["id"]); ?>">
                     <img class="card__image" src="<?php echo $image['url'] ?>"></img>
                     <div class="card__text">
                         <h3 class="card__title"><?php echo $image["title"] ?></h3>
                     </div>
-                </div>
+            </a>
             <?php endforeach; ?>
             <?php if ($loggedin && $_SESSION["user"]["role"] !="user") : ?>
                 <a class="card card--static card--add" href="addContent.php?page=static" >
